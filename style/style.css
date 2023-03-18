@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+input:focus, button:focus {
+    box-shadow: 0px 0px 5px rgb(18, 123, 188) inset;
+    transition: 1.5s ease;
+}
+.container {
+    width: 90vw;
+    margin: 0 auto;;
+}
+.header, .footer {
+    padding: 15px 0;
+    background-color: rgb(36, 62, 79);
+    font-size: 24px;
+    font-weight: 600;
+}
+.logo {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.logo p {
+    margin: 10px;
+}
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .container button {
+    margin: 10px;
+}
+.footer {
+    padding: 0;
+}
+input {
+    font-size: 16px;
+    padding: 4px 15px;
+}
+.btn {
+    min-width: 80px;
+    font-size: 16px;
+    color: #0b0000;
+    background-color: rgb(165, 240, 245);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px 6px 15px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out 0s;
+    border: 1px solid rgb(165, 240, 245);
+
+}
+.btn:hover {
+    box-shadow: 0px 0px 5px rgb(165, 240, 245);
+    background-color: rgb(70, 108, 110);
+    border: 1px solid #ffffffbc;
+    color: #fff;
+
+}
+
+h2 {
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(134, 170, 194);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.mask-num {
+    font-size: 14px;
+    padding: 5px 6px;
+    border: 1px solid rgb(48, 62, 71);
+    border-radius: 20px;
+}
+
+.mask-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+.mask-list {
+    margin: 15px 0;
+}
+input[type="checkbox"] + span {
+    padding-left: 10px;
+}
+input[type="checkbox"]:checked,
+input[type="checkbox"]:not(:checked){
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+}
+input[type="checkbox"]:checked + span,
+input[type="checkbox"]:not(:checked) + span{
+    position: relative;
+    padding-left: 35px;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + span::before{
+    content:'';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left:0;
+    top:calc(50% - 10px);
+    background-color: transparent;
+    border-radius: 2px;
+    border: 2px solid rgb(134, 170, 194);
+}
+input[type="checkbox"]:checked + span::after{
+    content:'';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transition: all .2s ease;
+    opacity: 1;
+    left: 4px;
+    top: calc(50% - 6px);
+    background-color: rgb(134, 170, 194);
+}
+input[type="checkbox"]:not(:checked) + span::before{
+    content:'';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left:0;
+    top:calc(50% - 10px);
+    background-color: transparent;
+    border-radius: 2px;
+    border: 2px solid rgb(134, 170, 194);
+}
+input[type="checkbox"]:not(:checked) + span::after{
+    content:'';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transition: all .2s ease;
+    opacity: 0;
+    left: 4px;
+    top: calc(50% - 6px);
+}
+.btn-remove {
+    border: none;
+    font-size: 12px;
+    background-color: rgb(48, 62, 71);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.btn-remove:hover {
+    background-color: rgb(72, 92, 105);
+    border-color: rgb(48, 62, 71);
+    box-shadow: 0px 0px 5px rgb(72, 92, 105);
+}
+@media screen and (max-width: 768px){
+.header .container {
+    flex-direction: column;
+    align-items: center;
+}
+.form {
+    max-width: 100%;
+    text-align: center;
+}
+.logo, input, .btn {
+    margin: 3px 0;
+}
+}
+@media screen and (max-width: 576px){
+    .logo {
+        font-size: 20px;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
